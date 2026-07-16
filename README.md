@@ -14,7 +14,7 @@ Basically, I just took the original project, and removed the useless stuff and s
 
 This project is shared under the MIT License. Read LICENSE and LICENSE.Soup for more info.
 
-> This repository won't go on the as it's technically not mine.
+> This repository won't go on the website as it's technically not mine.
 
 > > If anyone were to port this to Godot 4, I'd be greatly thankful, as I can't do it myself.
 

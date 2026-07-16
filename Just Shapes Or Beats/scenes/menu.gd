@@ -4,8 +4,8 @@ extends Control
 
 const VU_COUNT = 16
 const FREQ_MAX = 11050.0
-const WIDTH = 1024
-const HEIGHT = 600
+const WIDTH = 1024.0
+const HEIGHT = 600.0
 const MIN_DB = 60
 const SPECTRUM_COLOR = Color(1, 1, 1, 0.1)
 const SPECTRUM_COLUMN_SIZE_OFS = 5

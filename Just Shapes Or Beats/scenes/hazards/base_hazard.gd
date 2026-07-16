@@ -25,7 +25,7 @@ func _physics_process(delta):
 
 
 
-func _is_player_hit(player: Player) -> bool:
+func _is_player_hit(_player: Player) -> bool:
 	return false
 
 

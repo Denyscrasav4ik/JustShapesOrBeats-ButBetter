@@ -6,9 +6,9 @@ Basically, I just took the original project, and removed the useless stuff and s
 
 ## Credits
 
-TamerSoup625 - Original project.
-Berzerk Studio - Creators of JS&B (None of their assets were used).
-Camellia - +ERABY+E CONNEC+10N song being used in the demo level.
+- TamerSoup625 - Original project.
+- Berzerk Studio - Creators of JS&B (None of their assets were used).
+- Camellia - +ERABY+E CONNEC+10N song being used in the demo level.
 
 ## 📜 License
 

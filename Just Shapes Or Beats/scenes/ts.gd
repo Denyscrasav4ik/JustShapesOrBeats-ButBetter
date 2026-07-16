@@ -15,8 +15,6 @@ const COLOR_HAZARD_BLACK = Color.black
 const PLAYER_COLORS = PoolColorArray([
 	Color(0, 1, 1), 
 	Color(1, 1, 0), 
-	Color(0, 1, 0), 
-	Color(1, 0.5, 0), 
 ])
 const POOL_VEC2_CENTERED_SQUARE = PoolVector2Array([
 	Vector2( - 1, 1), 

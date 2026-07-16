@@ -22,7 +22,6 @@ const LETS_GO_STOP_TIME = 1
 const LETS_GO_HIDE_TIME = 0.5
 const MENU_TRACK = preload("res://scenes/menu_track.tscn")
 const MAIN = preload("res://scenes/main.tscn")
-const SILENCE = preload("res://music/silence_10s.mp3")
 
 enum {
 	CONTROL_MAIN, 
@@ -207,7 +206,7 @@ func give_focus_to(ctrl: int):
 
 func set_main_ctrl(type: int):
 	
-	StreamPlayer.stream = SILENCE
+	StreamPlayer.stream = null
 	StreamPlayer.play()
 	if type == CONTROL_TRACKS:
 		

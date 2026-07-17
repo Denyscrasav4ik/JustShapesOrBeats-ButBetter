@@ -23,10 +23,10 @@ const RANK_IMAGE_H = [
 
 var level_struct: LevelStruct
 
-onready var NameLabel = $"%NameLabel"
-onready var ArtistLabel = $"%ArtistLabel"
-onready var RankNormal = $"%RankNormal"
-onready var RankHardcore = $"%RankHardcore"
+@onready var NameLabel = $"%NameLabel"
+@onready var ArtistLabel = $"%ArtistLabel"
+@onready var RankNormal = $"%RankNormal"
+@onready var RankHardcore = $"%RankHardcore"
 
 
 func _ready():

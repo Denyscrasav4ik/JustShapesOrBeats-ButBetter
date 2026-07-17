@@ -32,8 +32,8 @@ var bullet_size: float
 
 var bullet_extras: Dictionary
 
-onready var LoLevHaz: LowLevelHazards = GameMethods.get_lo_lev_haz()
-onready var created_time: float = GameMethods.get_current_time()
+@onready var LoLevHaz: LowLevelHazards = GameMethods.get_lo_lev_haz()
+@onready var created_time: float = GameMethods.get_current_time()
 
 
 func _ready():

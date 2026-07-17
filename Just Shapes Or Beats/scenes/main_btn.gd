@@ -10,7 +10,7 @@ const ENTER_TIME = 0.15
 const EXIT_TIME = 0.075
 
 var last_margin_left: float
-var tween: SceneTreeTween
+var tween: Tween
 
 
 func _notification(what):
@@ -24,10 +24,10 @@ func _notification(what):
 		tween = create_tween()
 		if what == NOTIFICATION_MOUSE_ENTER:
 			if still_running:
-				margin_left = last_margin_left
+				offset_left = last_margin_left
 			else:
-				last_margin_left = margin_left
-			var __ = tween.tween_property(self, "margin_left", margin_left - MARGIN_OFFSET, ENTER_TIME).\
+				last_margin_left = offset_left
+			var __ = tween.tween_property(self, "offset_left", offset_left - MARGIN_OFFSET, ENTER_TIME).\
 			set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 		else:
-			var __ = tween.tween_property(self, "margin_left", last_margin_left, EXIT_TIME)
+			var __ = tween.tween_property(self, "offset_left", last_margin_left, EXIT_TIME)

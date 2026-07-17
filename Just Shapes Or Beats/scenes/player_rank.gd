@@ -25,10 +25,10 @@ var rank: int
 var hardcore: bool
 var player: Player
 
-onready var RankSprite = $Rank
-onready var PlayerSprite = $Player
-onready var AnimPlayer = $AnimationPlayer
-onready var AnimPlayer2 = $AnimationPlayer2
+@onready var RankSprite = $Rank
+@onready var PlayerSprite = $Player
+@onready var AnimPlayer = $AnimationPlayer
+@onready var AnimPlayer2 = $AnimationPlayer2
 
 
 func _ready():
@@ -36,7 +36,7 @@ func _ready():
 	PlayerSprite.texture = TS.PLAYER_TEXTURES[player.player_index][2]
 	
 	self_modulate = TS.PLAYER_COLORS[player.player_index]
-	RankSprite.modulate = Color.transparent
+	RankSprite.modulate = Color.TRANSPARENT
 
 
 func play_anim():

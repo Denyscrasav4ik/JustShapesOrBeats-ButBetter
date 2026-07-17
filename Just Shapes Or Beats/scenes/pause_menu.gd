@@ -1,27 +1,27 @@
 extends Control
 
 
-export var is_in_main_menu: bool = false
+@export var is_in_main_menu: bool = false
 
 var MENU = load("res://scenes/menu.tscn")
 var last_focused_control: Control = null
 
-onready var SoundSlider = $"%SoundSlider"
-onready var MusicSlider = $"%MusicSlider"
-onready var PhotoSensBtn = $"%PhotoSensBtn"
-onready var ScreenShakeBtn = $"%ScreenShakeBtn"
-onready var RestartPopup = $RestartPopup
-onready var ToMenuPopup = $ToMenuPopup
-onready var ResumeBtn = $"%ResumeBtn"
-onready var RestartBtn = $"%RestartBtn"
-onready var ToMenuBtn = $"%ToMenuBtn"
-onready var InputControlBtn = $"%InputControlBtn"
-onready var InputControlLabel = $"%InputControlLabel"
-onready var FullScreenBtn = $"%FullScreenBtn"
-onready var controls_text: Array = [
-	$"%Controls1", 
-	$"%Controls2", 
-	$"%Controls3", 
+@onready var SoundSlider = $"%SoundSlider"
+@onready var MusicSlider = $"%MusicSlider"
+@onready var PhotoSensBtn = $"%PhotoSensBtn"
+@onready var ScreenShakeBtn = $"%ScreenShakeBtn"
+@onready var RestartPopup = $RestartPopup
+@onready var ToMenuPopup = $ToMenuPopup
+@onready var ResumeBtn = $"%ResumeBtn"
+@onready var RestartBtn = $"%RestartBtn"
+@onready var ToMenuBtn = $"%ToMenuBtn"
+@onready var InputControlBtn = $"%InputControlBtn"
+@onready var InputControlLabel = $"%InputControlLabel"
+@onready var FullScreenBtn = $"%FullScreenBtn"
+@onready var controls_text: Array = [
+	$"%Controls1",
+	$"%Controls2",
+	$"%Controls3",
 ]
 
 
@@ -32,14 +32,14 @@ func _ready():
 	PhotoSensBtn.set_pressed_no_signal(GameSettings.photosens_mode)
 	ScreenShakeBtn.set_pressed_no_signal(GameSettings.screen_shake)
 	InputControlBtn.select(GameSettings.input_config)
-	FullScreenBtn.set_pressed_no_signal(OS.window_fullscreen)
+	FullScreenBtn.set_pressed_no_signal(((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN)))
 	show_controls_text(GameSettings.input_config)
 	if is_in_main_menu:
 		ResumeBtn.text = "Return"
 		RestartBtn.hide()
 		ToMenuBtn.hide()
 	else:
-		
+
 		InputControlLabel.text = "Cannot set control mode during gameplay, sorry :/"
 		InputControlBtn.hide()
 
@@ -52,7 +52,7 @@ func _ready():
 
 func show_controls_text(idx: int):
 	for i in controls_text.size():
-		
+
 		controls_text[i].visible = i == idx
 
 
@@ -68,9 +68,9 @@ func _input(event):
 
 
 func focus_stuff():
-	
+
 	if visible:
-		last_focused_control = get_focus_owner()
+		last_focused_control = get_viewport().gui_get_focus_owner()
 		ResumeBtn.call_deferred("grab_focus")
 	elif last_focused_control:
 		last_focused_control.call_deferred("grab_focus")
@@ -112,8 +112,9 @@ func _on_RestartCancel_pressed():
 
 
 func _on_RestartConfirm_pressed():
-	var __ = get_tree().reload_current_scene()
 	get_tree().paused = false
+	var __ = get_tree().reload_current_scene()
+
 
 
 func _on_ToMenu_pressed():
@@ -127,7 +128,7 @@ func _on_ToMenuCancel_pressed():
 func _on_ToMenuConfirm_pressed():
 	GameVars.menu_target_ctrl = 1
 	get_tree().paused = false
-	var __ = get_tree().change_scene_to(MENU)
+	var __ = get_tree().change_scene_to_packed(MENU)
 
 
 func _on_InputControlBtn_item_selected(index):
@@ -136,4 +137,4 @@ func _on_InputControlBtn_item_selected(index):
 
 
 func _on_FullScreenBtn_toggled(button_pressed):
-	OS.window_fullscreen = button_pressed
+	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (button_pressed) else Window.MODE_WINDOWED

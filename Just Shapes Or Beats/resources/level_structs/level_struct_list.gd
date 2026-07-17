@@ -1,5 +1,5 @@
 extends Resource
 
 
-export (Array, Resource) var struct_list: Array
-export (Array, String) var struct_uid: Array
+@export var struct_list: Array # (Array, Resource)
+@export var struct_uid: Array # (Array, String)

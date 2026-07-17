@@ -1,10 +1,10 @@
-tool
+@tool
 class_name CustomNodeLevelKey
 extends NodeSpawnLevelKey
 
 
-export var _scene: PackedScene setget set__scene
-export var _extras: Dictionary setget set__extras
+@export var _scene: PackedScene: set = set__scene
+@export var _extras: Dictionary: set = set__extras
 
 
 func set__scene(val):

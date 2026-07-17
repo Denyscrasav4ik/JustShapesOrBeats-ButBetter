@@ -1,566 +1,650 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene format=3 uid="uid://brqrhhhoiscnv"]
 
-[ext_resource path="res://resources/main_theme.tres" type="Theme" id=1]
-[ext_resource path="res://scenes/main_btn.gd" type="Script" id=2]
-[ext_resource path="res://images/logo.png" type="Texture" id=3]
-[ext_resource path="res://scenes/menu.gd" type="Script" id=4]
-[ext_resource path="res://resources/fonts/NexaBold/Nexa Bold.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://resources/fonts/NexaBold/Nexa Light.otf" type="DynamicFontData" id=7]
-[ext_resource path="res://scenes/diff_select.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/pause_menu.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/focus_square_hotspot.gd" type="Script" id=10]
+[ext_resource type="Theme" uid="uid://ch2gef7koebqs" path="res://resources/main_theme.tres" id="1"]
+[ext_resource type="Script" uid="uid://cnyropnh4ta72" path="res://scenes/main_btn.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://do7picnyorn8i" path="res://images/logo.png" id="3"]
+[ext_resource type="Script" uid="uid://cq0f1l8bia2gv" path="res://scenes/menu.gd" id="4"]
+[ext_resource type="FontFile" uid="uid://cn0frts2o7ovq" path="res://resources/fonts/NexaBold/Nexa Bold.otf" id="5"]
+[ext_resource type="FontFile" uid="uid://1resutucubj0" path="res://resources/fonts/NexaBold/Nexa Light.otf" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/diff_select.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://dr1ik0kjaaauo" path="res://scenes/pause_menu.tscn" id="9"]
+[ext_resource type="Script" uid="uid://c0cuc3ltw8rgy" path="res://scenes/focus_square_hotspot.gd" id="10"]
 
-[sub_resource type="DynamicFont" id=14]
-font_data = ExtResource( 5 )
-
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id="15"]
 content_margin_left = 30.0
 content_margin_top = 10.0
 content_margin_bottom = 10.0
-bg_color = Color( 0, 0, 0, 1 )
-skew = Vector2( -0.75, 0 )
+bg_color = Color(0, 0, 0, 1)
+skew = Vector2(0.75, 0)
 border_width_left = 10
-border_color = Color( 0.45, 0.054, 0.2388, 1 )
+border_color = Color(0.45, 0.054, 0.2388, 1)
 expand_margin_right = 250.0
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id="12"]
 resource_name = "PlayerDance"
-loop = true
+loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Player:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 360, 420 ), Vector2( 355, 416 ), Vector2( 360, 420 ), Vector2( 365, 416 ) ]
+"values": [Vector2(360, 420), Vector2(355, 416), Vector2(360, 420), Vector2(365, 416)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Player:rotation_degrees")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ -90.0002, -105.0, -90.0002, -75.0 ]
+"values": [-90.0002, -105.0, -90.0002, -75.0]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id="13"]
 resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Player:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 360, 420 ) ]
+"values": [Vector2(360, 420)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Player:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ -90.0002 ]
+"values": [-90.0002]
 }
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.0235294, 0.298039, 0.388235, 0.498039 )
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i6lef"]
+_data = {
+&"PlayerDance": SubResource("12"),
+&"RESET": SubResource("13")
+}
 
-[sub_resource type="DynamicFont" id=5]
-size = 20
-font_data = ExtResource( 5 )
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.0235294, 0.298039, 0.388235, 0.498039)
 
-[sub_resource type="DynamicFont" id=6]
-size = 12
-font_data = ExtResource( 7 )
+[sub_resource type="FontFile" id="6"]
+fallbacks = Array[Font]([ExtResource("7")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="DynamicFont" id=7]
-font_data = ExtResource( 7 )
+[sub_resource type="FontFile" id="7"]
+fallbacks = Array[Font]([ExtResource("7")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="DynamicFont" id=8]
-size = 12
-font_data = ExtResource( 7 )
+[sub_resource type="FontFile" id="8"]
+fallbacks = Array[Font]([ExtResource("7")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="GradientTexture2D" id=18]
+[sub_resource type="GradientTexture2D" id="18"]
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0, 0.5, 0.5, 1 )
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0, 0.5, 0.5, 1)
 
-[sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 5 )
+[sub_resource type="FontFile" id="3"]
+fallbacks = Array[Font]([ExtResource("5")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0, 0, 0, 0.25098 )
+[sub_resource type="StyleBoxFlat" id="4"]
+bg_color = Color(0, 0, 0, 0.25098)
 
-[sub_resource type="DynamicFont" id=11]
-size = 896
-use_mipmaps = true
-font_data = ExtResource( 5 )
-
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0, 0, 0, 1 )
+[sub_resource type="StyleBoxFlat" id="9"]
+bg_color = Color(0, 0, 0, 1)
 border_width_top = 1
 border_width_bottom = 1
-border_color = Color( 1, 1, 1, 1 )
+border_color = Color(1, 1, 1, 1)
 
-[sub_resource type="DynamicFont" id=10]
-size = 24
-font_data = ExtResource( 5 )
+[sub_resource type="FontFile" id="10"]
+fallbacks = Array[Font]([ExtResource("5")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="DynamicFont" id=16]
-size = 32
-font_data = ExtResource( 5 )
+[sub_resource type="FontFile" id="17"]
+fallbacks = Array[Font]([ExtResource("7")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="DynamicFont" id=17]
-size = 24
-font_data = ExtResource( 7 )
-
-[node name="Menu" type="Control"]
+[node name="Menu" type="Control" unique_id=1189402215]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 1 )
-script = ExtResource( 4 )
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1")
+script = ExtResource("4")
 
-[node name="Main" type="Control" parent="."]
+[node name="Main" type="Control" parent="." unique_id=1496394091]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="MainBtn" type="Button" parent="Main"]
+[node name="MainBtn" type="Button" parent="Main" unique_id=364781604]
 unique_name_in_owner = true
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -228.0
-margin_top = -31.0
-margin_bottom = 31.0
-theme_type_variation = "MainBtn"
+offset_left = -228.0
+offset_top = -31.0
+offset_bottom = 31.0
+theme_type_variation = &"MainBtn"
+theme_override_font_sizes/font_size = 48
 text = "PLAY"
-align = 0
-script = ExtResource( 2 )
+script = ExtResource("2")
 
-[node name="ExitBtn" type="Button" parent="Main"]
+[node name="ExitBtn" type="Button" parent="Main" unique_id=1401767571]
 unique_name_in_owner = true
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 0.85
 anchor_right = 1.0
 anchor_bottom = 0.85
-margin_left = -100.0
-margin_top = -20.0
-margin_bottom = 20.0
-theme_type_variation = "MainBtn"
-custom_fonts/font = SubResource( 14 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/focus = SubResource( 15 )
-custom_styles/disabled = SubResource( 15 )
-custom_styles/normal = SubResource( 15 )
+offset_left = -100.0
+offset_top = -20.0
+offset_bottom = 20.0
+theme_type_variation = &"MainBtn"
+theme_override_styles/normal = SubResource("15")
+theme_override_styles/pressed = SubResource("15")
+theme_override_styles/hover = SubResource("15")
+theme_override_styles/disabled = SubResource("15")
+theme_override_styles/focus = SubResource("15")
 text = "EXIT"
-align = 0
-script = ExtResource( 2 )
+script = ExtResource("2")
 
-[node name="TextureRect" type="TextureRect" parent="Main"]
-margin_left = 125.0
-margin_top = 108.0
-margin_right = 1225.0
-margin_bottom = 666.0
-rect_scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 3 )
+[node name="TextureRect" type="TextureRect" parent="Main" unique_id=1965347762]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 108.0
+offset_right = 1225.0
+offset_bottom = 666.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3")
 
-[node name="Player" type="Polygon2D" parent="Main"]
-position = Vector2( 360, 420 )
-rotation = -1.5708
-color = Color( 0, 1, 1, 1 )
-polygon = PoolVector2Array( -8, 8, -8, -8, 8, -8, 8, 8 )
+[node name="Player" type="Polygon2D" parent="Main" unique_id=250417829]
+position = Vector2(360, 420)
+rotation = -1.5707998
+color = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, 8)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Main"]
-autoplay = "PlayerDance"
-anims/PlayerDance = SubResource( 12 )
-anims/RESET = SubResource( 13 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main" unique_id=1377072834]
+libraries/ = SubResource("AnimationLibrary_i6lef")
+autoplay = &"PlayerDance"
 
-[node name="Tracks" type="Control" parent="."]
+[node name="Tracks" type="Control" parent="." unique_id=2133958641]
 visible = false
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Side" type="Panel" parent="Tracks"]
+[node name="Side" type="Panel" parent="Tracks" unique_id=1043178010]
+layout_mode = 0
 anchor_bottom = 1.0
-margin_top = 32.0
-margin_right = 196.0
-custom_styles/panel = SubResource( 1 )
+offset_top = 32.0
+offset_right = 196.0
+theme_override_styles/panel = SubResource("1")
 
-[node name="TracksSideStuff" type="Control" parent="Tracks/Side"]
+[node name="TracksSideStuff" type="Control" parent="Tracks/Side" unique_id=128616004]
 unique_name_in_owner = true
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="TrackName" type="Label" parent="Tracks/Side/TracksSideStuff"]
+[node name="TrackName" type="Label" parent="Tracks/Side/TracksSideStuff" unique_id=210528302]
 unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -80.0
-margin_top = 40.0
-margin_right = 80.0
-margin_bottom = 120.0
-custom_fonts/font = SubResource( 5 )
+offset_left = -80.0
+offset_top = 40.0
+offset_right = 80.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5")
+theme_override_font_sizes/font_size = 20
 text = "h"
-align = 1
-valign = 1
-autowrap = true
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 uppercase = true
 
-[node name="TrackByRemixed" type="Label" parent="Tracks/Side/TracksSideStuff"]
+[node name="TrackByRemixed" type="Label" parent="Tracks/Side/TracksSideStuff" unique_id=714974877]
 unique_name_in_owner = true
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -80.0
-margin_top = 160.0
-margin_right = 80.0
-margin_bottom = 172.0
-custom_fonts/font = SubResource( 6 )
+offset_left = -80.0
+offset_top = 160.0
+offset_right = 80.0
+offset_bottom = 172.0
+theme_override_fonts/font = SubResource("6")
 text = "Remixed by"
-align = 1
+horizontal_alignment = 1
 
-[node name="TrackArtist" type="Label" parent="Tracks/Side/TracksSideStuff"]
+[node name="TrackArtist" type="Label" parent="Tracks/Side/TracksSideStuff" unique_id=548047042]
 unique_name_in_owner = true
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -80.0
-margin_top = 200.0
-margin_right = 80.0
-margin_bottom = 216.0
-custom_fonts/font = SubResource( 7 )
+offset_left = -80.0
+offset_top = 200.0
+offset_right = 80.0
+offset_bottom = 216.0
+theme_override_fonts/font = SubResource("7")
 text = "Camellia"
-align = 1
+horizontal_alignment = 1
 
-[node name="From" type="Label" parent="Tracks/Side/TracksSideStuff"]
+[node name="From" type="Label" parent="Tracks/Side/TracksSideStuff" unique_id=2137381639]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -80.0
-margin_top = 280.0
-margin_right = 80.0
-margin_bottom = 292.0
-custom_fonts/font = SubResource( 8 )
+offset_left = -80.0
+offset_top = 280.0
+offset_right = 80.0
+offset_bottom = 292.0
+theme_override_fonts/font = SubResource("8")
 text = "From"
-align = 1
+horizontal_alignment = 1
 
-[node name="TrackPlaylist" type="Label" parent="Tracks/Side/TracksSideStuff"]
+[node name="TrackPlaylist" type="Label" parent="Tracks/Side/TracksSideStuff" unique_id=259212370]
 unique_name_in_owner = true
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -80.0
-margin_top = 320.0
-margin_right = 80.0
-margin_bottom = 336.0
-custom_fonts/font = SubResource( 7 )
+offset_left = -80.0
+offset_top = 320.0
+offset_right = 80.0
+offset_bottom = 336.0
+theme_override_fonts/font = SubResource("7")
 text = "+ERA 1/0"
-align = 1
+horizontal_alignment = 1
 
-[node name="TrackCover" type="TextureRect" parent="Tracks/Side/TracksSideStuff"]
+[node name="TrackCover" type="TextureRect" parent="Tracks/Side/TracksSideStuff" unique_id=1435057515]
 unique_name_in_owner = true
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -64.0
-margin_top = 400.0
-margin_right = 64.0
-margin_bottom = 528.0
-texture = SubResource( 18 )
-expand = true
+offset_left = -64.0
+offset_top = 400.0
+offset_right = 64.0
+offset_bottom = 528.0
+texture = SubResource("18")
+expand_mode = 1
 stretch_mode = 6
 
-[node name="Top" type="Panel" parent="Tracks"]
+[node name="Top" type="Panel" parent="Tracks" unique_id=676001616]
+layout_mode = 0
 anchor_right = 1.0
-margin_bottom = 32.0
-custom_styles/panel = SubResource( 2 )
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("2")
 
-[node name="TrackBackBtn" type="ToolButton" parent="Tracks/Top"]
+[node name="TrackBackBtn" type="Button" parent="Tracks/Top" unique_id=1533869601]
 unique_name_in_owner = true
+layout_mode = 0
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 4.0
-margin_top = -12.0
-margin_right = 48.0
-margin_bottom = 12.0
-custom_fonts/font = SubResource( 3 )
+offset_left = 4.0
+offset_top = -12.0
+offset_right = 48.0
+offset_bottom = 12.0
+theme_override_fonts/font = SubResource("3")
 text = "< Back"
-script = ExtResource( 10 )
-_FOCUS_SQUARE_HOTSPOT = Vector2( 80, 0 )
+script = ExtResource("10")
+_FOCUS_SQUARE_HOTSPOT = Vector2(80, 0)
 
-[node name="List" type="Panel" parent="Tracks"]
+[node name="List" type="Panel" parent="Tracks" unique_id=570398266]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 204.0
-margin_top = 40.0
-margin_right = -8.0
-margin_bottom = -8.0
-custom_styles/panel = SubResource( 4 )
+offset_left = 204.0
+offset_top = 40.0
+offset_right = -8.0
+offset_bottom = -8.0
+theme_override_styles/panel = SubResource("4")
 
-[node name="LevelChoose" type="ScrollContainer" parent="Tracks"]
+[node name="LevelChoose" type="ScrollContainer" parent="Tracks" unique_id=1099884828]
 unique_name_in_owner = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 212.0
-margin_top = 48.0
-margin_right = -16.0
-margin_bottom = -16.0
-scroll_horizontal_enabled = false
+offset_left = 212.0
+offset_top = 48.0
+offset_right = -16.0
+offset_bottom = -16.0
 
-[node name="LevelChooseBox" type="VBoxContainer" parent="Tracks/LevelChoose"]
+[node name="LevelChooseBox" type="VBoxContainer" parent="Tracks/LevelChoose" unique_id=480714063]
 unique_name_in_owner = true
-margin_right = 796.0
+layout_mode = 2
 size_flags_horizontal = 3
-custom_constants/separation = 10
+theme_override_constants/separation = 10
 
-[node name="LetsGo" type="Control" parent="."]
+[node name="LetsGo" type="Control" parent="." unique_id=965608225]
 visible = false
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Label" type="Label" parent="LetsGo"]
+[node name="Label" type="Label" parent="LetsGo" unique_id=84873210]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -2048.0
-margin_top = -1200.0
-margin_right = 2048.0
-margin_bottom = 1200.0
+offset_left = -2048.0
+offset_top = -1200.0
+offset_right = 2048.0
+offset_bottom = 1200.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_scale = Vector2( 0.063, 0.063 )
-rect_pivot_offset = Vector2( 2048, 1200 )
-theme_type_variation = "BigLabel"
-custom_colors/font_color = Color( 0, 1, 1, 1 )
-custom_fonts/font = SubResource( 11 )
+scale = Vector2(0.063, 0.063)
+pivot_offset = Vector2(2048, 1200)
+theme_type_variation = &"BigLabel"
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/font_size = 826
 text = "let's go"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 uppercase = true
 
-[node name="SelectDifficulty" type="Control" parent="."]
+[node name="SelectDifficulty" type="Control" parent="." unique_id=199803549]
 visible = false
+anchors_preset = 0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -150.0
-margin_bottom = 150.0
+offset_top = -150.0
+offset_bottom = 150.0
 
-[node name="ColorRect" type="ColorRect" parent="SelectDifficulty"]
+[node name="ColorRect" type="ColorRect" parent="SelectDifficulty" unique_id=2102841979]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -150.0
-margin_bottom = 150.0
-color = Color( 0, 0, 0, 0.498039 )
+offset_top = -150.0
+offset_bottom = 150.0
+color = Color(0, 0, 0, 0.498039)
 
-[node name="Panel" type="Panel" parent="SelectDifficulty"]
+[node name="Panel" type="Panel" parent="SelectDifficulty" unique_id=1479584842]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 9 )
+theme_override_styles/panel = SubResource("9")
 
-[node name="Label" type="Label" parent="SelectDifficulty/Panel"]
+[node name="Label" type="Label" parent="SelectDifficulty/Panel" unique_id=506561705]
+layout_mode = 0
 anchor_right = 1.0
-margin_bottom = 75.0
-custom_colors/font_color = Color( 0, 1, 1, 1 )
-custom_fonts/font = SubResource( 10 )
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = SubResource("10")
 text = "Select difficulty"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 uppercase = true
 
-[node name="SelectDiffHBox" type="HBoxContainer" parent="SelectDifficulty/Panel"]
+[node name="SelectDiffHBox" type="HBoxContainer" parent="SelectDifficulty/Panel" unique_id=1885169403]
 unique_name_in_owner = true
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 64.0
-margin_top = -225.0
-margin_right = -64.0
-margin_bottom = -16.0
+offset_left = 64.0
+offset_top = -225.0
+offset_right = -64.0
+offset_bottom = -16.0
 alignment = 1
 
-[node name="DiffSelect" parent="SelectDifficulty/Panel/SelectDiffHBox" instance=ExtResource( 8 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 120.0
-margin_right = 336.0
-margin_bottom = 209.0
-focus_neighbour_left = NodePath(".")
-focus_neighbour_top = NodePath(".")
+[node name="DiffSelect" parent="SelectDifficulty/Panel/SelectDiffHBox" unique_id=183207572 instance=ExtResource("8")]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
 
 [node name="VBoxContainer" parent="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect" index="0"]
-margin_right = 200.0
-margin_bottom = 209.0
+layout_mode = 2
 
 [node name="Button" parent="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect/VBoxContainer" index="0"]
-margin_right = 184.0
-margin_bottom = 166.0
+layout_mode = 2
 
 [node name="Label" parent="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect/VBoxContainer" index="1"]
-margin_top = 174.0
-margin_right = 184.0
-margin_bottom = 209.0
+layout_mode = 2
 
-[node name="DiffSelect2" parent="SelectDifficulty/Panel/SelectDiffHBox" instance=ExtResource( 8 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 340.0
-margin_right = 556.0
-margin_bottom = 209.0
-focus_neighbour_top = NodePath(".")
+[node name="DiffSelect2" parent="SelectDifficulty/Panel/SelectDiffHBox" unique_id=1923638206 instance=ExtResource("8")]
+layout_mode = 2
+focus_neighbor_top = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
 
 [node name="VBoxContainer" parent="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect2" index="0"]
-margin_right = 200.0
-margin_bottom = 209.0
+layout_mode = 2
 
 [node name="Button" parent="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect2/VBoxContainer" index="0"]
-modulate = Color( 0, 1, 1, 1 )
-margin_right = 184.0
-margin_bottom = 166.0
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
 text = "NORMAL"
 
 [node name="Label" parent="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect2/VBoxContainer" index="1"]
-margin_top = 174.0
-margin_right = 184.0
-margin_bottom = 209.0
+layout_mode = 2
 text = "- Get ranks
 - Hard fun!"
 
-[node name="DiffSelect3" parent="SelectDifficulty/Panel/SelectDiffHBox" instance=ExtResource( 8 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 560.0
-margin_right = 776.0
-margin_bottom = 209.0
-focus_neighbour_top = NodePath(".")
+[node name="DiffSelect3" parent="SelectDifficulty/Panel/SelectDiffHBox" unique_id=573367028 instance=ExtResource("8")]
+layout_mode = 2
+focus_neighbor_top = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
 
 [node name="VBoxContainer" parent="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect3" index="0"]
-margin_right = 200.0
-margin_bottom = 209.0
+layout_mode = 2
 
 [node name="Button" parent="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect3/VBoxContainer" index="0"]
-modulate = Color( 0.890196, 0.109804, 0.47451, 1 )
-margin_right = 184.0
-margin_bottom = 166.0
+modulate = Color(0.890196, 0.109804, 0.47451, 1)
+layout_mode = 2
 text = "HARDCORE"
 
 [node name="Label" parent="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect3/VBoxContainer" index="1"]
-margin_top = 174.0
-margin_right = 184.0
-margin_bottom = 209.0
+layout_mode = 2
 text = "- More danger
 - Brutal fun!"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-bus = "MusicWSpectrum"
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=318587451]
+bus = &"MusicWSpectrum"
 
-[node name="PauseMenu" parent="." instance=ExtResource( 9 )]
+[node name="PauseMenu" parent="." unique_id=966865727 instance=ExtResource("9")]
 visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
 is_in_main_menu = true
 
-[node name="ExitPopup" type="Popup" parent="."]
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = -125.0
-margin_bottom = 125.0
+[node name="ExitPopup" type="Popup" parent="." unique_id=715187438]
+oversampling_override = 1.0
+position = Vector2i(0, 175)
+size = Vector2i(1152, 250)
 
-[node name="Bg" type="ColorRect" parent="ExitPopup"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -300.0
-margin_bottom = 300.0
-color = Color( 0, 0, 0, 0.498039 )
-
-[node name="Base" type="ColorRect" parent="ExitPopup"]
+[node name="Base" type="ColorRect" parent="ExitPopup" unique_id=669056258]
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+offset_right = 0.12585449
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="ExitPopup/Base"]
+[node name="Label" type="Label" parent="ExitPopup/Base" unique_id=721735689]
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -126.0
-margin_top = 16.0
-margin_right = 126.0
-margin_bottom = 32.0
-custom_colors/font_color = Color( 0, 1, 1, 1 )
-custom_fonts/font = SubResource( 16 )
+offset_left = -126.0
+offset_top = 16.0
+offset_right = 126.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5")
+theme_override_font_sizes/font_size = 32
 text = "are you sure?"
 uppercase = true
 
-[node name="Label2" type="Label" parent="ExitPopup/Base"]
+[node name="Label2" type="Label" parent="ExitPopup/Base" unique_id=230721838]
+layout_mode = 1
+anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -25.5
-margin_bottom = 25.5
-custom_fonts/font = SubResource( 17 )
+offset_top = -25.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("17")
 text = "Are you sure you want to leave the game?"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ExitConfirm" type="ToolButton" parent="ExitPopup/Base"]
+[node name="ExitConfirm" type="Button" parent="ExitPopup/Base" unique_id=1345030552]
+layout_mode = 0
 anchor_left = 0.4
 anchor_top = 1.0
 anchor_right = 0.4
 anchor_bottom = 1.0
-margin_left = -64.0
-margin_top = -48.0
-margin_right = 64.0
-margin_bottom = -16.0
-custom_colors/font_color_disabled = Color( 0, 1, 1, 1 )
-custom_colors/font_color_focus = Color( 0, 1, 1, 1 )
-custom_colors/font_color = Color( 0, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 0, 1, 1, 1 )
+offset_left = -64.0
+offset_top = -48.0
+offset_right = 64.0
+offset_bottom = -16.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0, 1, 1, 1)
 text = "Exit"
 
-[node name="ExitCancel" type="ToolButton" parent="ExitPopup/Base"]
+[node name="ExitCancel" type="Button" parent="ExitPopup/Base" unique_id=1654696402]
+layout_mode = 0
 anchor_left = 0.6
 anchor_top = 1.0
 anchor_right = 0.6
 anchor_bottom = 1.0
-margin_left = -64.0
-margin_top = -48.0
-margin_right = 64.0
-margin_bottom = -16.0
-custom_colors/font_color_disabled = Color( 0, 1, 1, 1 )
-custom_colors/font_color_focus = Color( 0, 1, 1, 1 )
-custom_colors/font_color = Color( 0, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 0, 1, 1, 1 )
+offset_left = -64.0
+offset_top = -48.0
+offset_right = 64.0
+offset_bottom = -16.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0, 1, 1, 1)
 text = "Cancel"
 
 [connection signal="pressed" from="Main/MainBtn" to="." method="_on_MainPlayBtn_pressed"]
 [connection signal="pressed" from="Main/ExitBtn" to="." method="_on_ExitBtn_pressed"]
 [connection signal="pressed" from="Tracks/Top/TrackBackBtn" to="." method="_on_TracksBackBtn_pressed"]
 [connection signal="visibility_changed" from="LetsGo" to="." method="_on_LetsGo_visibility_changed"]
-[connection signal="pressed" from="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect/VBoxContainer/Button" to="." method="diff_btn_pressed" binds= [ 0 ]]
-[connection signal="pressed" from="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect2/VBoxContainer/Button" to="." method="diff_btn_pressed" binds= [ 1 ]]
-[connection signal="pressed" from="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect3/VBoxContainer/Button" to="." method="diff_btn_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect/VBoxContainer/Button" to="." method="diff_btn_pressed" binds= [0]]
+[connection signal="pressed" from="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect2/VBoxContainer/Button" to="." method="diff_btn_pressed" binds= [1]]
+[connection signal="pressed" from="SelectDifficulty/Panel/SelectDiffHBox/DiffSelect3/VBoxContainer/Button" to="." method="diff_btn_pressed" binds= [2]]
 [connection signal="pressed" from="ExitPopup/Base/ExitConfirm" to="." method="_on_ExitConfirm_pressed"]
 [connection signal="pressed" from="ExitPopup/Base/ExitCancel" to="." method="_on_ExitCancel_pressed"]
 

@@ -15,7 +15,7 @@
 [ext_resource path="res://resources/level_structs/bullet_pulse_lvl_key.gd" type="Script" id=13]
 [ext_resource path="res://resources/level_structs/shake_level_key.gd" type="Script" id=14]
 [ext_resource path="res://resources/level_structs/cam_push_lvl_key.gd" type="Script" id=15]
-[ext_resource path="res://images/tera_10.jpg" type="Texture" id=16]
+[ext_resource path="res://images/tera_10.jpg" type="Texture2D" id=16]
 
 [sub_resource type="Resource" id=25]
 script = ExtResource( 9 )
@@ -56,7 +56,7 @@ modifiers = {
 "0.position_x": "x",
 "1.position_x": "x"
 }
-inputs = PoolStringArray( "x" )
+inputs = PackedStringArray( "x" )
 
 [sub_resource type="Resource" id=31]
 script = ExtResource( 10 )
@@ -87,7 +87,7 @@ script = ExtResource( 7 )
 keys = [ SubResource( 31 ) ]
 modifiers = {
 }
-inputs = PoolStringArray(  )
+inputs = PackedStringArray(  )
 
 [sub_resource type="Resource" id=48]
 script = ExtResource( 13 )
@@ -161,7 +161,7 @@ modifiers = {
 "3.position_x": "position.x",
 "3.position_y": "position.y"
 }
-inputs = PoolStringArray( "position" )
+inputs = PackedStringArray( "position" )
 
 [sub_resource type="Resource" id=59]
 script = ExtResource( 6 )
@@ -191,7 +191,7 @@ spawn_time_offset = 0.0
 end_time_offset = 0.0
 position_x = "0"
 position_y = "0"
-base_rotation = "rand_range(0, TAU)"
+base_rotation = "randf_range(0, TAU)"
 torque = 0.312
 amount = 0
 time_offset = 0.131
@@ -216,7 +216,7 @@ modifiers = {
 "1.position_x": "position.x",
 "1.position_y": "position.y"
 }
-inputs = PoolStringArray( "position", "time", "size" )
+inputs = PackedStringArray( "position", "time", "size" )
 
 [sub_resource type="Resource" id=76]
 script = ExtResource( 10 )
@@ -237,7 +237,7 @@ auto_despawn = true
 sin_x = 100.0
 sin_y = 0.0
 sin_freq = 0.5
-sin_lifetime_base = "rand_range(0, TAU)"
+sin_lifetime_base = "randf_range(0, TAU)"
 sin_lifetime_multi = 0.2
 sin_rotates = false
 dna_couple = true
@@ -261,7 +261,7 @@ auto_despawn = true
 sin_x = 100.0
 sin_y = 0.0
 sin_freq = 0.5
-sin_lifetime_base = "rand_range(0, TAU)"
+sin_lifetime_base = "randf_range(0, TAU)"
 sin_lifetime_multi = 0.2
 sin_rotates = false
 dna_couple = true
@@ -275,7 +275,7 @@ modifiers = {
 "1.position_y": "str(600 * (1 - inv))",
 "1.rotation": "str(-0.5 * PI + PI * inv)"
 }
-inputs = PoolStringArray( "inv" )
+inputs = PackedStringArray( "inv" )
 
 [sub_resource type="Resource" id=93]
 script = ExtResource( 10 )
@@ -296,7 +296,7 @@ auto_despawn = true
 sin_x = 0.0
 sin_y = 150.0
 sin_freq = 0.5
-sin_lifetime_base = "rand_range(0, TAU)"
+sin_lifetime_base = "randf_range(0, TAU)"
 sin_lifetime_multi = 0.2
 sin_rotates = true
 dna_couple = true
@@ -309,7 +309,7 @@ modifiers = {
 "0.position_y": "str(pos.y)",
 "0.rotation": "str(dir)"
 }
-inputs = PoolStringArray( "pos", "dir" )
+inputs = PackedStringArray( "pos", "dir" )
 
 [sub_resource type="Resource" id=116]
 script = ExtResource( 6 )
@@ -339,7 +339,7 @@ spawn_time_offset = 0.0
 end_time_offset = 0.0
 position_x = "0"
 position_y = "0"
-base_rotation = "rand_range(0, TAU)"
+base_rotation = "randf_range(0, TAU)"
 torque = 0.39
 amount = 0
 time_offset = 0.131
@@ -363,7 +363,7 @@ modifiers = {
 "1.position_x": "position.x",
 "1.position_y": "position.y"
 }
-inputs = PoolStringArray( "position", "time" )
+inputs = PackedStringArray( "position", "time" )
 
 [sub_resource type="Resource" id=130]
 resource_name = "Left"
@@ -385,7 +385,7 @@ auto_despawn = true
 sin_x = 0.0
 sin_y = 150.0
 sin_freq = 0.5
-sin_lifetime_base = "rand_range(0, TAU)"
+sin_lifetime_base = "randf_range(0, TAU)"
 sin_lifetime_multi = 0.2
 sin_rotates = false
 dna_couple = true
@@ -410,7 +410,7 @@ auto_despawn = true
 sin_x = 0.0
 sin_y = 150.0
 sin_freq = 0.5
-sin_lifetime_base = "rand_range(0, TAU)"
+sin_lifetime_base = "randf_range(0, TAU)"
 sin_lifetime_multi = 0.2
 sin_rotates = false
 dna_couple = true
@@ -423,7 +423,7 @@ modifiers = {
 "0.position_y": "str(if3(450, invert, 150))",
 "1.position_y": "str(if3(150, invert, 450))"
 }
-inputs = PoolStringArray( "invert" )
+inputs = PackedStringArray( "invert" )
 
 [sub_resource type="Resource" id=139]
 script = ExtResource( 6 )
@@ -431,11 +431,11 @@ time = 0.0
 type = 0
 bullet_or_floor = 0
 position_x = "0"
-position_y = "rand_range(0, 600)"
-speed_x = "rand_range(75, 450)"
-speed_y = "rand_range(-100, 100)"
+position_y = "randf_range(0, 600)"
+speed_x = "randf_range(75, 450)"
+speed_y = "randf_range(-100, 100)"
 size = "12"
-rotation_degrees = "rand_range(0, 360)"
+rotation_degrees = "randf_range(0, 360)"
 torque_degrees = "720"
 sin_x = 0.0
 sin_y = 0.0
@@ -462,11 +462,11 @@ time = 0.0
 type = 0
 bullet_or_floor = 0
 position_x = "1024"
-position_y = "rand_range(0, 600)"
-speed_x = "-rand_range(75, 450)"
-speed_y = "rand_range(-100, 100)"
+position_y = "randf_range(0, 600)"
+speed_x = "-randf_range(75, 450)"
+speed_y = "randf_range(-100, 100)"
 size = "12"
-rotation_degrees = "rand_range(0, 360)"
+rotation_degrees = "randf_range(0, 360)"
 torque_degrees = "720"
 sin_x = 0.0
 sin_y = 0.0
@@ -493,7 +493,7 @@ script = ExtResource( 7 )
 keys = [ SubResource( 136 ), SubResource( 141 ) ]
 modifiers = {
 }
-inputs = PoolStringArray(  )
+inputs = PackedStringArray(  )
 
 [sub_resource type="Resource" id=149]
 script = ExtResource( 6 )
@@ -523,7 +523,7 @@ spawn_time_offset = 0.0
 end_time_offset = 0.0
 position_x = "512"
 position_y = "300"
-base_rotation = "rand_range(0, TAU)"
+base_rotation = "randf_range(0, TAU)"
 torque = 0.35
 amount = 16
 time_offset = 0.131
@@ -543,7 +543,7 @@ modifiers = {
 "0.torque_degrees": "str(if3(360, clockwise, -360))",
 "1.torque": "if3(0.3, clockwise, -0.3)"
 }
-inputs = PoolStringArray( "clockwise" )
+inputs = PackedStringArray( "clockwise" )
 
 [sub_resource type="Resource" id=55]
 script = ExtResource( 10 )
@@ -575,9 +575,9 @@ time = 0.0
 type = 0
 bullet_or_floor = 0
 position_x = "1024"
-position_y = "rand_range(0, 600)"
+position_y = "randf_range(0, 600)"
 speed_x = "-250"
-speed_y = "rand_range(-50, 50)"
+speed_y = "randf_range(-50, 50)"
 size = "8"
 rotation_degrees = "0"
 torque_degrees = "360"
@@ -718,9 +718,9 @@ time = 0.0
 type = 0
 bullet_or_floor = 0
 position_x = "1024"
-position_y = "rand_range(0, 600)"
-speed_x = "rand_range(-350, -300)"
-speed_y = "rand_range(-100, 100)"
+position_y = "randf_range(0, 600)"
+speed_x = "randf_range(-350, -300)"
+speed_y = "randf_range(-100, 100)"
 size = "8"
 rotation_degrees = "0"
 torque_degrees = "720"
@@ -1065,7 +1065,7 @@ auto_despawn = true
 sin_x = 0.0
 sin_y = 150.0
 sin_freq = 0.5
-sin_lifetime_base = "rand_range(0, TAU)"
+sin_lifetime_base = "randf_range(0, TAU)"
 sin_lifetime_multi = 0.2
 sin_rotates = false
 dna_couple = true
@@ -1113,9 +1113,9 @@ time = 0.0
 type = 0
 bullet_or_floor = 0
 position_x = "1024"
-position_y = "rand_range(0, 600)"
-speed_x = "rand_range(-350, -300)"
-speed_y = "rand_range(-100, 100)"
+position_y = "randf_range(0, 600)"
+speed_x = "randf_range(-350, -300)"
+speed_y = "randf_range(-100, 100)"
 size = "8"
 rotation_degrees = "0"
 torque_degrees = "720"
@@ -1240,7 +1240,7 @@ time = 72.391
 key = SubResource( 87 )
 modifiers = {
 "sin_lifetime_base": "str(2 * (0.4 + if3(-0.4, i == 0, 0.1 * i)))",
-"sin_y": "range_lerp(i, 0, 10, 150, 300)",
+"sin_y": "remap(i, 0, 10, 150, 300)",
 "spawn_time_offset": "if3(1.566, i == 0, 0.261)"
 }
 is_time_modifier_xi = false
@@ -1275,7 +1275,7 @@ modifiers = {
 "position_x": "str(if3(512 - 7.5 * i, i % 2 == 0, 512 + 7.5 * (i+1)))"
 }
 is_time_modifier_xi = false
-time_modifier = "0.06522 * 0.5 * stepify(i, 2)"
+time_modifier = "0.06522 * 0.5 * snapped(i, 2)"
 times = 21
 
 [sub_resource type="Resource" id=95]
@@ -1306,7 +1306,7 @@ time = 0.0
 spawn_time_offset = 1.044
 end_time_offset = 0.261
 position_x = "512"
-position_y = "rand_range(0, 600)"
+position_y = "randf_range(0, 600)"
 _scene = ExtResource( 4 )
 _extras = {
 "direction": "if3(0, randi() % 2 == 0, PI)",
@@ -1549,7 +1549,7 @@ script = ExtResource( 10 )
 time = 0.0
 spawn_time_offset = 0.261
 end_time_offset = 0.261
-position_x = "rand_range(200, 824)"
+position_x = "randf_range(200, 824)"
 position_y = "0"
 type = 0
 create_time = 0.052
@@ -1563,7 +1563,7 @@ auto_despawn = true
 sin_x = 10.0
 sin_y = 0.0
 sin_freq = 0.25
-sin_lifetime_base = "rand_range(0, TAU)"
+sin_lifetime_base = "randf_range(0, TAU)"
 sin_lifetime_multi = 0.5
 sin_rotates = false
 dna_couple = false

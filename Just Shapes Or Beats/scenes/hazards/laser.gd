@@ -15,7 +15,7 @@ const PUSH_FORCE = 0.25
 const DISAPPEAR_TIME = 0.1
 const SHAKE_OFFSET = 5
 
-export var laser_gradient: Gradient
+@export var laser_gradient: Gradient
 
 var _spawned = false
 var _ending = false
@@ -28,19 +28,19 @@ var size: float = 10
 var direction: float = 0
 var shake: bool = false
 var lifetime: float = 0
-var width_tween: SceneTreeTween
+var width_tween: Tween
 
-onready var SCREEN_LINES = [
+@onready var SCREEN_LINES = [
 	Line2.new(Vector2.DOWN, - size), 
 	Line2.new(Vector2.RIGHT, - size), 
 	Line2.new(Vector2.UP, - 600 - size), 
 	Line2.new(Vector2.LEFT, - 1024 - size), 
 ]
-onready var _half_size: float = size * 0.5
-onready var Line = $Line2D
-onready var MyArea = $Area2D
-onready var CollShape = $Area2D / CollisionShape2D
-onready var RectShape: RectangleShape2D = CollShape.shape
+@onready var _half_size: float = size * 0.5
+@onready var Line = $Line2D
+@onready var MyArea = $Area2D
+@onready var CollShape = $Area2D / CollisionShape2D
+@onready var RectShape: RectangleShape2D = CollShape.shape
 
 
 func _ready():
@@ -105,7 +105,7 @@ func _process(delta):
 		color = TS.hazards_get_warning_color(lifetime, spawn_time_offset)
 	
 	if _animation_time != 2.0 and not GameSettings.photosens_mode:
-		color = laser_gradient.interpolate(_animation_time * 0.5)
+		color = laser_gradient.sample(_animation_time * 0.5)
 	
 	if _ending:
 		color.a = _animation_time2
@@ -123,7 +123,7 @@ func _process(delta):
 		MyArea.position = 0.5 * (_laser_start + _laser_end)
 	
 	if shake and _spawned and not _ending:
-		position = Vector2(rand_range( - SHAKE_OFFSET, SHAKE_OFFSET), rand_range( - SHAKE_OFFSET, SHAKE_OFFSET))
+		position = Vector2(randf_range( - SHAKE_OFFSET, SHAKE_OFFSET), randf_range( - SHAKE_OFFSET, SHAKE_OFFSET))
 
 
 
@@ -150,4 +150,4 @@ func _end():
 	width_tween = create_tween()
 	
 	var __ = width_tween.tween_property(self, "_animation_time2", 0.0, DISAPPEAR_TIME)
-	var ___ = width_tween.tween_callback(self, "queue_free")
+	var ___ = width_tween.tween_callback(Callable(self, "queue_free"))

@@ -19,5 +19,5 @@ var input_config: int = 0
 
 
 func update_volumes():
-	AudioServer.set_bus_volume_db(3, linear2db(sound_volume))
-	AudioServer.set_bus_volume_db(1, linear2db(music_volume))
+	AudioServer.set_bus_volume_db(3, linear_to_db(sound_volume))
+	AudioServer.set_bus_volume_db(1, linear_to_db(music_volume))

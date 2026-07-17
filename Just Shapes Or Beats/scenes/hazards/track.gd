@@ -23,13 +23,13 @@ var sin_rotates: bool = false
 
 var dna_couple: bool = false
 
-onready var LoLevHaz = GameMethods.get_lo_lev_haz()
+@onready var LoLevHaz = GameMethods.get_lo_lev_haz()
 
 
 func _ready():
 	assert (create_time != 0.0, "Tracks with zero create time will freeze the game")
 	if dna_couple:
-		var dupe = load("res://scenes/hazards/track.tscn").instance()
+		var dupe = load("res://scenes/hazards/track.tscn").instantiate()
 		
 		dupe.spawn_time_offset = spawn_time_offset
 		dupe.end_time_offset = end_time_offset

@@ -8,7 +8,7 @@ class_name BaseHazard
 
 
 
-export var wind_affected: bool = true
+@export var wind_affected: bool = true
 
 
 

@@ -8,11 +8,11 @@ var MENU = load("res://scenes/menu.tscn")
 var rank_controls: Array
 var can_continue: bool = false
 
-onready var HardcoreTxt = $"%HardcoreTxt"
-onready var Above = $"%Above"
-onready var AnimPlayer = $AnimationPlayer
-onready var ResultVBox = $"%ResultVBox"
-onready var BlackFade = $BlackFade
+@onready var HardcoreTxt = $"%HardcoreTxt"
+@onready var Above = $"%Above"
+@onready var AnimPlayer = $AnimationPlayer
+@onready var ResultVBox = $"%ResultVBox"
+@onready var BlackFade = $BlackFade
 
 
 func _ready():
@@ -23,10 +23,10 @@ func _ready():
 
 func play_anim(ranks: Array):
 	HardcoreTxt.visible = GameVars.current_mode == GameVars.MODE_HARDCORE
-	Above.color = TS.COLOR_TRUE_HOT_PINK if GameVars.current_mode == GameVars.MODE_HARDCORE else Color.cyan
+	Above.color = TS.COLOR_TRUE_HOT_PINK if GameVars.current_mode == GameVars.MODE_HARDCORE else Color.CYAN
 	var players: Array = GameMethods.get_players()
 	for i in players.size():
-		var rank_ctrl = PLAYER_RANK.instance()
+		var rank_ctrl = PLAYER_RANK.instantiate()
 		rank_ctrl.rank = ranks[i]
 		rank_ctrl.hardcore = GameVars.current_mode == GameVars.MODE_HARDCORE
 		rank_ctrl.player = players[i]
@@ -49,10 +49,10 @@ func allow_continue():
 
 
 func do_continue():
-	var tween: SceneTreeTween = create_tween()
+	var tween: Tween = create_tween()
 	GameVars.menu_target_ctrl = 1
 	var __ = tween.tween_property(BlackFade, "color", Color(0, 0, 0, 1), FADE_TO_BLACK_TIME)
-	var ___ = tween.tween_callback(get_tree(), "change_scene_to", [MENU])
+	var ___ = tween.tween_callback(Callable(get_tree(), "change_scene_to_packed").bind(MENU))
 
 
 func _input(event):

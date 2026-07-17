@@ -1,14 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene format=2]
 
-[ext_resource path="res://scenes/low_level_hazards.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/main.gd" type="Script" id=5]
-[ext_resource path="res://resources/materials/shader_hazard.tres" type="Material" id=6]
-[ext_resource path="res://scenes/camera.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/cp_bar.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/screen_flash.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/rewind.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/pause_menu.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/end_result.tscn" type="PackedScene" id=14]
+[ext_resource type="PackedScene" path="res://scenes/low_level_hazards.tscn" id="4"]
+[ext_resource type="Script" uid="uid://nb7j6675nl5d" path="res://scenes/main.gd" id="5"]
+[ext_resource type="Material" uid="uid://dropab45dopup" path="res://resources/materials/shader_hazard.tres" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/camera.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/progressbar.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/screen_flash.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://scenes/rewind.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://dr1ik0kjaaauo" path="res://scenes/pause_menu.tscn" id="13"]
+[ext_resource type="PackedScene" path="res://scenes/end_result.tscn" id="14"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 5 )
@@ -26,7 +26,7 @@ material = ExtResource( 6 )
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
-[node name="Camera" parent="." instance=ExtResource( 7 )]
+[node name="Camera3D" parent="." instance=ExtResource( 7 )]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 bus = "Music"

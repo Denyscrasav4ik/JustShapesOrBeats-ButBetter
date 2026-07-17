@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/Camellia - +ERABY+E CONNEC+10N.mp3-bd53747528ddbff9989aa7924c9adad0.mp3str"
+uid="uid://sj7usps7pf63"
+path="res://.godot/imported/Camellia - +ERABY+E CONNEC+10N.mp3-bd53747528ddbff9989aa7924c9adad0.mp3str"
 
 [deps]
 
 source_file="res://music/Camellia - +ERABY+E CONNEC+10N.mp3"
-dest_files=[ "res://.import/Camellia - +ERABY+E CONNEC+10N.mp3-bd53747528ddbff9989aa7924c9adad0.mp3str" ]
+dest_files=["res://.godot/imported/Camellia - +ERABY+E CONNEC+10N.mp3-bd53747528ddbff9989aa7924c9adad0.mp3str"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

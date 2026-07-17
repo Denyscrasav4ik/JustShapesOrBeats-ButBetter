@@ -15,20 +15,20 @@ const TEXT_MAP = {
 	NOT = Vector2(407, 152), 
 }
 
-onready var BlackRect = $BlackRect
-onready var Its = $Its
-onready var Not = $Not
-onready var Over = $Over
-onready var ShapeDestroyed = $Shape / Destroyed
-onready var ShapeConstructed = $Shape / Reconstructed
-onready var ShapeShine = $Shape / Shine
+@onready var BlackRect = $BlackRect
+@onready var Its = $Its
+@onready var Not = $Not
+@onready var Over = $Over
+@onready var ShapeDestroyed = $Shape3D / Destroyed
+@onready var ShapeConstructed = $Shape3D / Reconstructed
+@onready var ShapeShine = $Shape3D / Shine
 
 
 func _ready():
 	get_tree().paused = false
-	Its.rect_position = TEXT_MAP.ITS_START
+	Its.position = TEXT_MAP.ITS_START
 	Not.hide()
-	Over.rect_position = TEXT_MAP.OVER_START
+	Over.position = TEXT_MAP.OVER_START
 
 	BlackRect.show()
 
@@ -43,19 +43,19 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("dash1"):
 		Not.show()
-		Not.rect_scale = Vector2.ZERO
+		Not.scale = Vector2.ZERO
 		
 		var tween = create_tween().set_parallel().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-		tween.tween_property(Its, "rect_position", TEXT_MAP.ITS_END, NOT_OVER_TIME)
-		tween.tween_property(Over, "rect_position", TEXT_MAP.OVER_END, NOT_OVER_TIME)
-		tween.tween_property(Not, "rect_scale", Vector2.ONE, NOT_OVER_TIME)
+		tween.tween_property(Its, "position", TEXT_MAP.ITS_END, NOT_OVER_TIME)
+		tween.tween_property(Over, "position", TEXT_MAP.OVER_END, NOT_OVER_TIME)
+		tween.tween_property(Not, "scale", Vector2.ONE, NOT_OVER_TIME)
 		
 		
 		var tween2 = create_tween().set_trans(Tween.TRANS_CUBIC)
 		tween2.tween_property(ShapeShine, "scale", Vector2.ONE, NOT_OVER_TIME).set_ease(Tween.EASE_OUT)
-		tween2.tween_callback(ShapeDestroyed, "hide")
-		tween2.tween_callback(ShapeConstructed, "show")
+		tween2.tween_callback(Callable(ShapeDestroyed, "hide"))
+		tween2.tween_callback(Callable(ShapeConstructed, "show"))
 		tween2.tween_property(ShapeShine, "scale", Vector2.ZERO, NOT_OVER_TIME).set_ease(Tween.EASE_IN)
-		tween2.tween_property(BlackRect, "color", Color.black, EASE_BLACK_TIME)
-		tween2.tween_callback(get_tree(), "change_scene_to", [RETURN_SCN])
+		tween2.tween_property(BlackRect, "color", Color.BLACK, EASE_BLACK_TIME)
+		tween2.tween_callback(Callable(get_tree(), "change_scene_to_packed").bind(RETURN_SCN))
 

@@ -1,8 +1,8 @@
-# Just Shapes or Beats, But Maybe Cleaner
+# Just Shapes or Beats, But Better
 
 ## 📝 Functionality
 
-Basically, I just took the original project, and removed the useless stuff and stuff that could potentially complicate porting to Godot 4.x (currently Godot 3.5.1).
+Basically, I just took the original project, and ported it to Godot 4.
 
 ## Credits
 
@@ -16,6 +16,6 @@ This project is shared under the MIT License. Read LICENSE and LICENSE.Soup for 
 
 > This repository won't go on the website as it's technically not mine.
 
-> > If anyone were to port this to Godot 4, I'd be greatly thankful, as I can't do it myself.
+> > The reason the demo level is weird is because Godot 3's default resolution is 128/75, while Godot 4's default resolution is 16/9. I was too lazy to port it over.
 
 > > > The reason scripts are formatted weirdly is because this is a decompiled version of the project, as the actual repo was missing some stuff for some reason.

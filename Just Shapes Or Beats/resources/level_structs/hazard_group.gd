@@ -1,15 +1,7 @@
 extends Resource
 class_name HazardGroup
 
+@export var keys: Array[Resource]
 
-
-
-
-
-export (Array, Resource) var keys
-
-
-
-
-export (Dictionary) var modifiers
-export var inputs: PoolStringArray
+@export var modifiers: Dictionary
+@export var inputs: PackedStringArray
